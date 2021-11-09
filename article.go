@@ -2,23 +2,23 @@ package common
 
 import "github.com/google/uuid"
 
-type article struct {
+type Article struct {
 	ID         uuid.UUID
 	Title      string
 	Author     string
 	Characters int16
 }
 
-type ArticleList map[uuid.UUID]*article
+type ArticleList map[uuid.UUID]*Article
 
-func NewArticle(title, author string, characters int16) *article {
-	return &article{
+func NewArticle(title, author string, characters int16) *Article {
+	return &Article{
 		Title:      title,
 		Author:     author,
 		Characters: characters,
 	}
 }
 
-func (a *article) SetID(ID uuid.UUID) {
+func (a *Article) SetID(ID uuid.UUID) {
 	a.ID = ID
 }
